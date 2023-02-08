@@ -1,9 +1,8 @@
 {
-  "name": "change-project-name",
-  "version": "1.0.2",
-  "description": "change-description.",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "name": "create-app-config",
+  "version": "0.0.1",
+  "description": "A open source project for creat apps in Javascript and Typescript.",
+  "bin": "lib/script.js",
   "scripts": {
     "test": "vitest",
     "test:run": "vitest run",
@@ -26,7 +25,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/change-autor/change-project-name.git"
+    "url": "git+https://github.com/change-autor/create-app-config.git"
   },
   "keywords": [
     "typescript",
@@ -35,9 +34,9 @@
   "author": "change-autor",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/change-autor/change-project-name/issues"
+    "url": "https://github.com/change-autor/create-app-config/issues"
   },
-  "homepage": "https://github.com/change-autor/change-project-name#readme",
+  "homepage": "https://github.com/change-autor/create-app-config#readme",
   "dependencies": {
     "axios": "^1.2.0",
     "rimraf": "^3.0.2"
