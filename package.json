@@ -38,6 +38,7 @@
   },
   "homepage": "https://github.com/change-autor/create-app-config#readme",
   "dependencies": {
+    "@types/inquirer": "8.1.0",
     "axios": "^1.2.0",
     "rimraf": "^3.0.2"
   },
