@@ -1,10 +1,11 @@
 import { addDependencies } from "./utils/addDependencies";
 import { ColorLog } from "./utils/colorLog";
+import { createApp } from "./utils/CreateApp";
 import {
   makeInitialQuestions,
   makeFinishQuestions,
 } from "./utils/makeQuestions";
-
+import { packManager } from "./utils/packageManager";
 (async () => {
   ColorLog.green("Welcome to the create-app-config CLI! 🚀");
   ColorLog.green("Let's get started!");
@@ -26,7 +27,15 @@ import {
     tailwind = response.tailwind;
   }
 
-  const manager = packageManager(packageManager);
+  const manager = packManager(packageManager);
+
+  await createApp({
+    template,
+    isTypescript: isTypescript === "Yes",
+    projectName,
+    packageManager,
+  });
+
   await addDependencies({
     template,
     managerMessage: manager.message,
