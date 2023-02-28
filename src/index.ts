@@ -1,6 +1,6 @@
 import { addDependencies } from "./utils/addDependencies";
 import { ColorLog } from "./utils/colorLog";
-import { createApp } from "./utils/CreateApp";
+import { createApp } from "./utils/createApp";
 import {
   makeInitialQuestions,
   makeFinishQuestions,

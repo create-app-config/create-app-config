@@ -19,42 +19,48 @@ export const createApp = async ({
         exec(`npx create-react-app ${projectName} --template typescript`);
       }
       if (template === "Nextjs") {
-        exec(`npx create-next-app ${projectName} --typescript`);
+        exec(
+          `npx create-next-app ${projectName} --typescript --no-eslint --no-experimental-app --src-dir --import-alias "~/*"t`,
+        );
       }
       if (template === "Vite") {
-        exec(`npm create-vite-app ${projectName} -- --template react-ts`);
+        exec(`npm create vite@latest ${projectName} -- --template react-ts`);
       }
     } else {
       if (template === "Reactjs") {
-        exec(`npx create-react-app ${projectName} `);
+        exec(`npx create-react-app ${projectName}`);
       }
       if (template === "Nextjs") {
         exec(`npx create-next-app ${projectName} --no-eslint`);
       }
       if (template === "Vite") {
-        exec(`npm create-vite-app ${projectName} -- --template react`);
+        exec(`npm create vite@latest ${projectName} -- --template react`);
       }
     }
   } else {
     if (isTypescript) {
       if (template === "Reactjs") {
-        exec(`yarn create-react-app ${projectName} --template typescript`); // yarn create-react-app my-react-app --template typescript
+        exec(`yarn create react-app ${projectName} --template typescript`);
       }
       if (template === "Nextjs") {
-        exec(`yarn create-next-app ${projectName} --ts --no-eslint`); // yarn create next-app my-next-app --ts --no-eslint
+        exec(
+          `yarn create next-app ${projectName} --typescript --no-eslint --no-experimental-app --src-dir --import-alias "~/*"`,
+        );
       }
       if (template === "Vite") {
-        exec(`yarn create-vite-app ${projectName} -- --template react-ts`); //  yarn create vite my-vite-app --template react-ts
+        exec(`yarn create vite ${projectName} -- --template react-ts`);
       }
     } else {
       if (template === "Reactjs") {
-        exec(`yarn create-react-app ${projectName} `);
+        exec(`yarn create react-app ${projectName}`);
       }
       if (template === "Nextjs") {
-        exec(`yarn create-next-app ${projectName} --no-eslint`);
+        exec(
+          `yarn create next-app ${projectName} --javascript --no-eslint --no-experimental-app --src-dir --import-alias "~/*"`,
+        );
       }
       if (template === "Vite") {
-        exec(`yarn create-vite-app ${projectName} -- --template react`);
+        exec(`yarn create vite ${projectName} -- --template react`);
       }
     }
   }
