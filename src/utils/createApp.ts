@@ -20,7 +20,7 @@ export const createApp = async ({
       }
       if (template === "Nextjs") {
         exec(
-          `npx create-next-app ${projectName} --typescript --no-eslint --no-experimental-app --src-dir --import-alias "~/*"t`,
+          `npx create-next-app ${projectName} --typescript --no-eslint --no-experimental-app --src-dir --import-alias "@/*"`,
         );
       }
       if (template === "Vite") {
@@ -31,7 +31,9 @@ export const createApp = async ({
         exec(`npx create-react-app ${projectName}`);
       }
       if (template === "Nextjs") {
-        exec(`npx create-next-app ${projectName} --no-eslint`);
+        exec(
+          `npx create-next-app ${projectName} --javascript --no-eslint --no-experimental-app --src-dir --import-alias "@/*"`,
+        );
       }
       if (template === "Vite") {
         exec(`npm create vite@latest ${projectName} -- --template react`);
@@ -44,7 +46,7 @@ export const createApp = async ({
       }
       if (template === "Nextjs") {
         exec(
-          `yarn create next-app ${projectName} --typescript --no-eslint --no-experimental-app --src-dir --import-alias "~/*"`,
+          `yarn create next-app ${projectName} --typescript --no-eslint --no-experimental-app --src-dir --import-alias "@/*"`,
         );
       }
       if (template === "Vite") {
@@ -56,7 +58,7 @@ export const createApp = async ({
       }
       if (template === "Nextjs") {
         exec(
-          `yarn create next-app ${projectName} --javascript --no-eslint --no-experimental-app --src-dir --import-alias "~/*"`,
+          `yarn create next-app ${projectName} --javascript --no-eslint --no-experimental-app --src-dir --import-alias "@/*"`,
         );
       }
       if (template === "Vite") {
