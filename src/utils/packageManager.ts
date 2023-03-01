@@ -3,7 +3,7 @@ interface IManager {
   command: string;
 }
 
-export const packageManager = (currentManager: string) => {
+export const packManager = (currentManager: string) => {
   const manager: IManager = {
     message: "",
     command: "",
