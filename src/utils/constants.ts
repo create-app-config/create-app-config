@@ -32,3 +32,8 @@ export const lintersDependencies = {
   typescript: ["@typescript-eslint/eslint-plugin", "@typescript-eslint/parser"],
 };
 export const tailwindDependencies = ["tailwindcss", "autoprefixer", "postcss"];
+export const expressDependencies = {
+  typescript: ["@types/express", "@types/node", "ts-node-dev", "typescript"],
+  javascript: ["nodemon"],
+  dependencies: ["express", "dotenv", "rimraf"],
+};

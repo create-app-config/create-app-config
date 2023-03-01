@@ -7,6 +7,7 @@ import {
   huskyDependencies,
   lintStagedDependencies,
   commitlintDependencies,
+  expressDependencies,
 } from "./constants";
 
 interface IDependencies {
@@ -46,6 +47,18 @@ export const addDependencies = async ({
     eslintPrettierDependencies = isTypescript
       ? [...lintersDependencies.express, ...lintersDependencies.typescript]
       : lintersDependencies.express;
+
+    dependenciesObject.dependencies.push(...expressDependencies.dependencies);
+
+    if (isTypescript) {
+      dependenciesObject.dev_dependencies.push(
+        ...expressDependencies.typescript,
+      );
+    } else {
+      dependenciesObject.dev_dependencies.push(
+        ...expressDependencies.javascript,
+      );
+    }
   }
 
   if (linters) {
