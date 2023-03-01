@@ -1,4 +1,4 @@
-interface IManager {
+export interface IManager {
   message: string;
   command: string;
 }

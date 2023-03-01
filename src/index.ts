@@ -1,6 +1,7 @@
 import { addDependencies } from "./utils/addDependencies";
 import { ColorLog } from "./utils/colorLog";
 import { createApp } from "./utils/createApp";
+import { folderNavigate } from "./utils/folderController";
 import {
   makeInitialQuestions,
   makeFinishQuestions,
@@ -27,31 +28,37 @@ import { packManager } from "./utils/packageManager";
     tailwind = response.tailwind;
   }
 
-  const manager = packManager(packageManager);
-
-  await createApp({
-    template,
-    isTypescript: isTypescript === "Yes",
-    projectName,
-    packageManager,
-  });
-
-  await addDependencies({
-    template,
-    managerMessage: manager.message,
+  const booleanResponse = {
     isTypescript: isTypescript === "Yes",
     linters: linters === "Yes",
     husky: husky === "Yes",
     tailwind: tailwind === "Yes",
+  };
+
+  const manager = packManager(packageManager);
+
+  ColorLog.green("Creating your app...");
+  console.log("");
+  await createApp({
+    template,
+    isTypescript: booleanResponse.isTypescript,
+    projectName,
+    manager,
+    packageManager,
+    linters: booleanResponse.linters,
+    husky: booleanResponse.husky,
   });
 
-  console.log(
+  folderNavigate(projectName);
+
+  ColorLog.green("Installing dependencies...");
+  console.log("");
+  await addDependencies({
     template,
-    isTypescript,
-    projectName,
-    packageManager,
-    linters,
-    husky,
-    tailwind,
-  );
+    managerMessage: manager.message,
+    isTypescript: booleanResponse.isTypescript,
+    linters: booleanResponse.linters,
+    husky: booleanResponse.husky,
+    tailwind: booleanResponse.tailwind,
+  });
 })();
