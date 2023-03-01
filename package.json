@@ -1,6 +1,6 @@
 {
   "name": "create-app-config",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A open source project for creat apps in Javascript and Typescript.",
   "bin": "lib/script.js",
   "scripts": {
