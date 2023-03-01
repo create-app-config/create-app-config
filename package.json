@@ -41,6 +41,7 @@
     "@types/shelljs": "^0.8.11",
     "axios": "^1.2.0",
     "chalk": "3.0.0",
+    "down-git-files": "^1.0.1",
     "inquirer": "8.0.0",
     "rimraf": "^3.0.2",
     "shelljs": "^0.8.5",
