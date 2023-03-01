@@ -82,6 +82,18 @@ export const createExpress = async ({
     files.push(data);
   }
 
+  if (isTypescript) {
+    files.push(
+      fileRequest({
+        user: "create-app-config",
+        repo: "create-app-config",
+        path: "src/templates/tsconfig.txt",
+        branch: "main",
+        file: "tsconfig.json",
+      }),
+    );
+  }
+
   if (husky) {
     await huskyConfig(packageManager.command);
   }
