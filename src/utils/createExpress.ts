@@ -87,7 +87,7 @@ export const createExpress = async ({
       fileRequest({
         user: "create-app-config",
         repo: "create-app-config",
-        path: "src/templates/tsconfig.txt",
+        path: "src/templates/express/tsconfig.txt",
         branch: "main",
         file: "tsconfig.json",
       }),
